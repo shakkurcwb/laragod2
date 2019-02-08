@@ -2,20 +2,23 @@
 <div class="container-fluid">
 
     <a href="{{ url('/') }}" class="site-logo">
-        <img class="hidden-md-down" src="{{ asset('img/logo-2.png') }}" alt="Logo Image">
-        <img class="hidden-lg-down" src="{{ asset('img/logo-2-mob.png') }}" alt="Logo Image">
-    </a>
+        
+        <img class="hidden-md-down" src="{{ ( empty(Request::user()->meta->theme) OR Request::user()->meta->theme == 'original' ) ? asset('img/logo-2.png') : asset('img/logo-2-white.png') }}" alt="Logo Image">
+        <img class="hidden-lg-down" src="{{ ( empty(Request::user()->meta->theme) OR Request::user()->meta->theme == 'original' ) ? asset('img/logo-2-mob.png') : asset('img/logo-2-mob-inverse.png') }}" alt="Logo Image">
 
-    <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
-        <span>toggle menu</span>
-    </button>
+    </a>
 
     <button class="hamburger hamburger-htla">
         <span>toggle menu</span>
     </button>
 
     <div class="site-header-content">
+
         <div class="site-header-content-in">
+
+            <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
+                <span>toggle menu</span>
+            </button>
 
             <div class="site-header-shown">
 
@@ -209,7 +212,7 @@
                 <div class="dropdown user-menu">
 
                     <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @img(['avatar' => 1, 'url' => Request::user()->id ?? ''])
+                        @img(['avatar' => 1, 'url' => Request::user()->meta->avatar ?? ''])
                     </button>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
@@ -238,12 +241,16 @@
 
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="{{ url('/logout') }}">
+                        <a class="dropdown-item" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                             @icon(['icon' => 'sign-out', 'class' => 'font-icon'])
                             <span class="lbl">@lang('Logout')</span>
                         </a>
                     
                     </div>
+
+                    <form id="frm-logout" action="{{ url('/logout') }}" method="post">
+                        @csrf
+                    </form>
 
                 </div>
 

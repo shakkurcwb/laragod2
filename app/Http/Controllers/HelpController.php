@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class HelpController extends Controller
 {
     public function __construct()
     {
@@ -15,6 +15,11 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        return view('home');
+        return view('help');
+    }
+
+    public function search(Request $request)
+    {
+        return view('help');
     }
 }

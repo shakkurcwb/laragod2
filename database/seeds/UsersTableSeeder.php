@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Administrator',
             'email' => 'admin',
             'password' => Hash::make('admin'),
+            'is_admin' => true,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

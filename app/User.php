@@ -29,4 +29,9 @@ class User extends Authenticatable
         'last_seen_at',
     ];
 
+    public function meta()
+    {
+        return $this->hasOne('App\UserMeta');
+    }
+
 }

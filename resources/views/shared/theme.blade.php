@@ -28,15 +28,17 @@
         
         <link rel="stylesheet" href="{{ asset('css/lib/font-awesome/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/lib/bootstrap/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('css/separate/vendor/select2.min.css') }}">
+        
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         @yield('styles')
 
     </head>
 
-    <body class="@auth with-side-menu theme-{{ Request::user()->theme ?? config('app.theme', 'default') }} @endauth">
+    <body class="@auth with-side-menu theme-{{ Request::user()->meta->theme ?? 'original' }} @endauth">
 
         @auth
 
@@ -64,31 +66,7 @@
         <script src="{{ asset('js/lib/bootstrap/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/plugins.min.js') }}"></script>
 
-        @push('login')
-
-            <script src="{{ asset('js/lib/match-height/jquery.matchHeight.min.js') }}"></script>
-            <script>
-            
-                $(function() {
-            
-                    $('.page-center').matchHeight({
-                        target: $('html')
-                    });
-            
-                    $(window).resize(function(){
-                        setTimeout(function(){
-                            $('.page-center').matchHeight({ remove: true });
-                            $('.page-center').matchHeight({
-                                target: $('html')
-                            });
-                        }, 100);
-                    });
-            
-                });
-            
-            </script>
-
-        @endpush
+        <script src="{{ asset('js/lib/select2/select2.full.min.js') }}"></script>
         
         <script src="{{ asset('js/app.js') }}"></script>
 

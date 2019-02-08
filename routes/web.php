@@ -9,6 +9,7 @@ Auth::routes([ 'register' => true ]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/help', 'HelpController@index')->name('help');
+Route::post('/help/search', 'HelpController@search');
 
 Route::get('/profile', 'ProfileController@edit')->name('profile');
 Route::patch('/profile', 'ProfileController@update');

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class ProfileController extends Controller
 {
     public function __construct()
     {
@@ -13,8 +13,13 @@ class HomeController extends Controller
         $this->middleware('locale');
     }
 
-    public function index(Request $request)
+    public function edit(Request $request)
     {
-        return view('home');
+        return view('profile');
+    }
+
+    public function update(Request $request)
+    {
+        // 
     }
 }

@@ -1,7 +1,7 @@
 
 <ul class="side-menu-list">
 
-    <li class="blue-dirty {{ Request::is('/home') ? 'opened' : '' }}">
+    <li class="blue-dirty {{ Request::is('home') ? 'opened' : '' }}">
 
         <a href="{{ url('/home') }}">
             @icon(['icon' => 'home'])
@@ -16,7 +16,7 @@
 
 <ul class="side-menu-list">
 
-    <li class="blue-dirty {{ Request::is('/dashboard') ? 'opened' : '' }}">
+    <li class="blue-dirty {{ Request::is('dashboard') ? 'opened' : '' }}">
 
         <a href="{{ url('/dashboard') }}">
             @icon(['icon' => 'dashboard'])
@@ -25,7 +25,7 @@
 
     </li>
 
-    <li class="blue-dirty {{ Request::is('/users*') ? 'opened' : '' }}">
+    <li class="blue-dirty {{ Request::is('users*') ? 'opened' : '' }}">
 
         <a href="{{ url('/users') }}">
             @icon(['icon' => 'users'])

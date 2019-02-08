@@ -229,39 +229,39 @@ $(document).ready(function(){
         });
     }
 
-    if ($('.select2').length) {
-        // Select2
-        //$.fn.select2.defaults.set("minimumResultsForSearch", "Infinity");
+    $('.select2').not('.manual').select2();
 
-        $('.select2').not('.manual').select2();
+    $(".select2-icon").not('.manual').select2({
+        templateSelection: select2Icons,
+        templateResult: select2Icons
+    });
 
-        $(".select2-icon").not('.manual').select2({
-            templateSelection: select2Icons,
-            templateResult: select2Icons
-        });
+    $(".select2-arrow").not('.manual').select2({
+        theme: "arrow"
+    });
 
-        $(".select2-arrow").not('.manual').select2({
-            theme: "arrow"
-        });
+    $('.select2-no-search-arrow').select2({
+        minimumResultsForSearch: "Infinity",
+        theme: "arrow"
+    });
 
-        $('.select2-no-search-arrow').select2({
-            minimumResultsForSearch: "Infinity",
-            theme: "arrow"
-        });
+    $('.select2-no-search-default').select2({
+        minimumResultsForSearch: "Infinity"
+    });
 
-        $('.select2-no-search-default').select2({
-            minimumResultsForSearch: "Infinity"
-        });
+    $(".select2-white").not('.manual').select2({
+        theme: "white"
+    });
 
-        $(".select2-white").not('.manual').select2({
-            theme: "white"
-        });
+    $(".select2-photo").not('.manual').select2({
+        templateSelection: select2Photos,
+        templateResult: select2Photos
+    });
 
-        $(".select2-photo").not('.manual').select2({
-            templateSelection: select2Photos,
-            templateResult: select2Photos
-        });
-    }
+    $(".select2-flag").not('.manual').select2({
+        templateSelection: select2Flags,
+        templateResult: select2Flags
+    });
 
     function select2Icons (state) {
         if (!state.id) { return state.text; }
@@ -275,6 +275,14 @@ $(document).ready(function(){
         if (!state.id) { return state.text; }
         var $state = $(
             '<span class="user-item"><img src="' + state.element.getAttribute('data-photo') + '"/>' + state.text + '</span>'
+        );
+        return $state;
+    }
+
+    function select2Flags (state) {
+        if (!state.id) { return state.text; }
+        var $state = $(
+            '<span class="flag-icon m-r flag-icon-' + state.element.getAttribute('data-flag') + '"></span><span>' + state.text + '</span>'
         );
         return $state;
     }

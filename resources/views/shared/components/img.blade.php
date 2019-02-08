@@ -1,13 +1,13 @@
 
 @isset($avatar)
 
-    @if (!empty($url) && file_exists(storage_path($url)))
+    @if (!empty($url) && file_exists(asset($url)))
 
-        <img class="{{ $class ?? '' }}" src="{{ storage_path($url) }}" alt="Avatar">
+        <img class="{{ $class ?? '' }}" src="{{ asset($url) }}" alt="Avatar">
 
     @else
 
-        <img class="{{ $class ?? '' }}" src="img/avatar-2-64.png" alt="No Avatar">
+        <img class="{{ $class ?? '' }}" src="{{ asset('img/avatar-2-64.png') }}" alt="No Avatar">
 
     @endif
 
