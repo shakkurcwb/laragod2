@@ -30,6 +30,13 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('shared.components.form', 'form');
         Blade::component('shared.components.form-group', 'formGroup');
 
+        // Tab Components
+        Blade::component('shared.components.tab.tab', 'tab');
+        Blade::component('shared.components.tab.nav', 'tabNav');
+        Blade::include('shared.components.tab.item', 'tabItem');
+        Blade::component('shared.components.tab.content', 'tabContent');
+        Blade::component('shared.components.tab.panel', 'tabPanel');
+
         # Directives
         Blade::directive('datetime', function ($expression) {
             return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";

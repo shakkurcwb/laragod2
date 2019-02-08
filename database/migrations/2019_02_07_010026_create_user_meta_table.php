@@ -18,7 +18,7 @@ class CreateUserMetaTable extends Migration
             $table->string('language')->nullable();
             $table->string('theme')->nullable();
 
-            $table->enum('gender', ['male', 'female', 'undefined'])->nullable();
+            $table->enum('gender', ['male', 'female', ''])->nullable();
             $table->date('birth')->nullable();
 
             $table->string('avatar')->nullable();
@@ -35,8 +35,10 @@ class CreateUserMetaTable extends Migration
 
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
             $table->string('youtube')->nullable();
+            $table->string('github')->nullable();
 
         });
     }
