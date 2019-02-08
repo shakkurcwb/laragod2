@@ -4,7 +4,7 @@
     <a href="{{ url('/') }}" class="site-logo">
         
         <img class="hidden-md-down" src="{{ ( empty(Request::user()->meta->theme) OR Request::user()->meta->theme == 'original' ) ? asset('img/logo-2.png') : asset('img/logo-2-white.png') }}" alt="Logo Image">
-        <img class="hidden-lg-down" src="{{ ( empty(Request::user()->meta->theme) OR Request::user()->meta->theme == 'original' ) ? asset('img/logo-2-mob.png') : asset('img/logo-2-mob-inverse.png') }}" alt="Logo Image">
+        <img class="hidden-lg-down" src="{{ asset('img/logo-2-mob.png') }}" alt="Logo Image">
 
     </a>
 

@@ -10,7 +10,7 @@ class Feedback extends Model
     protected $table = 'feedback';
 
     protected $fillable = [
-        'description',
+        'subject', 'description', 'user_id',
     ];
 
     protected $hidden = [

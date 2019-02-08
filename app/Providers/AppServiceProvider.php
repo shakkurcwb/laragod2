@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::include('shared.components.img', 'img');
         Blade::include('shared.components.input', 'input');
         Blade::include('shared.components.checkbox', 'checkbox');
+        Blade::include('shared.components.select2', 'select2');
         Blade::include('shared.components.select', 'select');
         Blade::include('shared.components.header', 'header');
         Blade::include('shared.components.success', 'success');

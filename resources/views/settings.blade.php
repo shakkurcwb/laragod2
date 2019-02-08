@@ -33,25 +33,24 @@
                             'error' => $errors->has('theme') ? $errors->first('theme') : ''
                         ])
 
-                            @select([
+                            @select2([
                                 'name' => 'theme',
-                                'has_error' => $errors->has('theme'),
-                                'selected' => Request::user()->meta->theme,
+                                'selected' => Request::user()->meta->theme ?? '',
                                 'options' => [
 
                                     __('Main Themes') => [
-                                        'original' => 'Original',
-                                        'rebecca-purple' => 'Rebecca Purple',
-                                        'picton-blue' => 'Picton Blue',
-                                        'picton-blue-white-ebony' => 'Picton Blue White Ebony'
+                                        '' => 'Original',
+                                        'theme-rebecca-purple' => 'Rebecca Purple',
+                                        'theme-picton-blue' => 'Picton Blue',
+                                        'theme-picton-blue-white-ebony' => 'Picton Blue White Ebony'
                                     ],
 
                                     __('Side Themes') => [
-                                        'side-tin' => 'Tin',
-                                        'side-ebony-clay' => 'Ebony Clay',
-                                        'side-madison-caribbean' => 'Madison Caribbean',
-                                        'side-caesium-dark-caribbean' => 'Caesium Dark Caribbean',
-                                        'side-litmus-blue' => 'Litmus Blue',
+                                        'theme-side-tin' => 'Tin',
+                                        'theme-side-ebony-clay' => 'Ebony Clay',
+                                        'theme-side-madison-caribbean' => 'Madison Caribbean',
+                                        'theme-side-caesium-dark-caribbean' => 'Caesium Dark Caribbean',
+                                        'theme-side-litmus-blue' => 'Litmus Blue',
                                     ],
 
                                 ],
@@ -73,11 +72,10 @@
                             'error' => $errors->has('language') ? $errors->first('language') : ''
                         ])
 
-                            @select([
+                            @select2([
                                 'name' => 'language',
                                 'type' => 'flag',
-                                'has_error' => $errors->has('language'),
-                                'selected' => Request::user()->meta->language,
+                                'selected' => Request::user()->meta->language ?? config('app.locale'),
                                 'options' => [
                                     
                                     'pt-BR' => ['br', 'Português'],
@@ -96,7 +94,7 @@
 
                 <div class="m-t">
                         
-                    <button type="submit" class="btn btn-primary">@lang('Save')</button>
+                    <button type="submit" class="btn btn-info">@lang('Save')</button>
 
                 </div>
 

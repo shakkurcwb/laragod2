@@ -38,7 +38,7 @@
 
     </head>
 
-    <body class="@auth with-side-menu theme-{{ Request::user()->meta->theme ?? 'original' }} @endauth">
+    <body class="@auth with-side-menu {{ Request::user()->meta->theme ?? '' }} @endauth">
 
         @auth
 
