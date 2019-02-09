@@ -35,7 +35,7 @@
 
         <section>
 
-            @form(['method' => 'patch', 'url' => '/profile'])
+            @form(['method' => 'patch', 'url' => '/profile', 'fileUpload' => 1])
 
                 @tab
 
@@ -141,7 +141,7 @@
                                             'name' => 'birth',
                                             'type' => 'date',
                                             'has_error' => $errors->has('birth'),
-                                            'value' => Request::user()->meta->birth,
+                                            'value' => Request::user()->meta->birth->format('Y-m-d'),
                                         ])
                     
                                     @endformGroup
@@ -237,6 +237,7 @@
                                             'name' => 'summary',
                                             'title' => __('Share something great about yourself.'),
                                             'rows' => 4,
+                                            'value' => Request::user()->meta->summary,
                                             'has_error' => $errors->has('summary'),
                                         ])
             
@@ -261,10 +262,11 @@
                                         @textarea([
                                             'name' => 'interests',
                                             'with_tags' => 1,
+                                            'value' => Request::user()->meta->interests,
                                             'has_error' => $errors->has('interests'),
                                         ])
 
-                                        <small>@lang('Type a word then press Enter to add more.')</small>
+                                        <small class="color-blue-grey">@lang('Type a word then press Enter to add more.')</small>
 
                                     @endformGroup
 
@@ -384,7 +386,7 @@
 
                                 </div>
 
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 m-t">
 
                                     @formGroup([
                                         'no_icon' => 1,
@@ -422,6 +424,7 @@
                     
                                         @input([
                                             'name' => 'facebook',
+                                            'value' => Request::user()->meta->facebook,
                                             'has_error' => $errors->has('facebook'),
                                         ])
 
@@ -440,6 +443,7 @@
                     
                                         @input([
                                             'name' => 'instagram',
+                                            'value' => Request::user()->meta->instagram,
                                             'has_error' => $errors->has('instagram'),
                                         ])
 
@@ -458,6 +462,7 @@
                     
                                         @input([
                                             'name' => 'linkedin',
+                                            'value' => Request::user()->meta->linkedin,
                                             'has_error' => $errors->has('linkedin'),
                                         ])
 
@@ -476,6 +481,7 @@
                     
                                         @input([
                                             'name' => 'twitter',
+                                            'value' => Request::user()->meta->twitter,
                                             'has_error' => $errors->has('twitter'),
                                         ])
 
@@ -494,6 +500,7 @@
                     
                                         @input([
                                             'name' => 'youtube',
+                                            'value' => Request::user()->meta->youtube,
                                             'has_error' => $errors->has('youtube'),
                                         ])
 
@@ -512,6 +519,7 @@
                     
                                         @input([
                                             'name' => 'github',
+                                            'value' => Request::user()->meta->github,
                                             'has_error' => $errors->has('github'),
                                         ])
 

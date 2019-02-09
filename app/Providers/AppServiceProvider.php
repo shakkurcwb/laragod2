@@ -38,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('shared.components.tab.panel', 'tabPanel');
 
         # Directives
+        Blade::directive('date', function ($expression) {
+            return "<?php echo ($expression)->format('d-m-Y'); ?>";
+        });
+
         Blade::directive('datetime', function ($expression) {
             return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";
         });

@@ -18,8 +18,8 @@ class UserMeta extends Model
         'position', 'company',
         'country', 'city',
         'summary', 'interests',
-        'facebook', 'instagram',
-        'twitter', 'youtube',
+        'facebook', 'instagram', 'linkedin',
+        'twitter', 'youtube', 'github',
     ];
 
     protected $hidden = [

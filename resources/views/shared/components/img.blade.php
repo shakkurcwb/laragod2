@@ -1,9 +1,9 @@
 
 @isset($avatar)
 
-    @if (!empty($url) && file_exists(asset($url)))
+    @if (!empty($url))
 
-        <img class="{{ $class ?? '' }}" src="{{ asset($url) }}" alt="Avatar">
+        <img class="{{ $class ?? '' }}" src="{{ asset('storage/' . $url) }}?{{ rand() }}" alt="Avatar">
 
     @else
 
