@@ -10,7 +10,7 @@
         <span class="nav-link-in color-{{ !empty($has_error) ? 'red' : '' }}">
 
             @icon([ 'icon' => $icon, 'color' => ( !empty($has_error) ? 'red' : '' ) ])
-            <span class="d-none d-md-block">@lang($text ?? '')</span>
+            <span class="d-none d-md-block" style="font-size: 11px;">@lang($text ?? '')</span>
 
         </span>
     </a>

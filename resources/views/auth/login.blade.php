@@ -19,7 +19,7 @@
                 <header class="sign-title">{{ config('app.name', 'LaraGod') }}</header>
 
                 @formGroup([
-                    'left' => 1,
+                    'on_left' => 1,
                     'error' => $errors->has('email') ? $errors->first('email') : ''
                 ])
 
@@ -34,7 +34,7 @@
                 @endformGroup
 
                 @formGroup([
-                    'left' => 1,
+                    'on_left' => 1,
                     'error' => $errors->has('password') ? $errors->first('password') : '',
                 ])
 

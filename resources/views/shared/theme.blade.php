@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="{{ asset('css/lib/bootstrap/bootstrap.min.css') }}">
 
         <link rel="stylesheet" href="{{ asset('css/separate/vendor/select2.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/separate/vendor/tags_editor.min.css') }}">
         
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -67,6 +68,8 @@
         <script src="{{ asset('js/plugins.min.js') }}"></script>
 
         <script src="{{ asset('js/lib/select2/select2.full.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery-tag-editor/jquery.caret.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery-tag-editor/jquery.tag-editor.min.js') }}"></script>
         
         <script src="{{ asset('js/app.js') }}"></script>
 

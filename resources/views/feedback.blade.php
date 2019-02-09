@@ -29,7 +29,7 @@
                     <div class="col-sm-4">
 
                         @formGroup([
-                            'clean' => 1,
+                            'no_icon' => 1,
                             'error' => $errors->has('subject') ? $errors->first('subject') : ''
                         ])
 
@@ -59,6 +59,7 @@
                     <div class="col-sm-8">
 
                         @formGroup([
+                            'no_icon' => 1,
                             'error' => $errors->has('description') ? $errors->first('description') : ''
                         ])
 
@@ -68,8 +69,6 @@
                                 'rows' => 4,
                                 'has_error' => $errors->has('description'),
                             ])
-
-                            @icon(['icon' => 'align-left', 'has_error' => $errors->has('description')])
 
                         @endformGroup
 

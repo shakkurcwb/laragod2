@@ -19,7 +19,7 @@
                 <header class="sign-title">@lang('New User')</header>
 
                 @formGroup([
-                    'left' => 1,
+                    'on_left' => 1,
                     'error' => $errors->has('name') ? $errors->first('name') : '',
                 ])
 
@@ -34,7 +34,7 @@
                 @endformGroup
 
                 @formGroup([
-                    'left' => 1,
+                    'on_left' => 1,
                     'error' => $errors->has('email') ? $errors->first('email') : '',
                 ])
 
@@ -49,7 +49,7 @@
                 @endformGroup
 
                 @formGroup([
-                    'left' => 1,
+                    'on_left' => 1,
                     'error' => $errors->has('password') ? $errors->first('password') : '',
                 ])
 
@@ -60,11 +60,11 @@
                         'has_error' => $errors->has('password'),
                     ]) 
 
-                    @icon(['icon' => 'asterisk', 'has_error' => $errors->has('password')])
+                    @icon(['icon' => 'key', 'has_error' => $errors->has('password')])
 
                 @endformGroup
 
-                @formGroup(['left' => true])
+                @formGroup(['on_left' => true])
 
                     @input([
                         'name' => 'password_confirmation',

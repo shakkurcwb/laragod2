@@ -22,14 +22,13 @@ class CreateUserMetaTable extends Migration
             $table->date('birth')->nullable();
 
             $table->string('avatar')->nullable();
-            $table->string('headline')->nullable();
 
             $table->string('position')->nullable();
             $table->string('company')->nullable();
-
             $table->string('country')->nullable();
             $table->string('city')->nullable();
-
+            
+            $table->string('headline')->nullable();
             $table->text('summary')->nullable();
             $table->string('interests')->nullable();
 
