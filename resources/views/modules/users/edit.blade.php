@@ -18,8 +18,6 @@
     
     <div class="container-fluid">
 
-        @success(['message' => session('success')])
-
         <section class="box-typical box-typical-padding">
 
             @form(['method' => 'patch', 'url' => '/users/' . $user->id])

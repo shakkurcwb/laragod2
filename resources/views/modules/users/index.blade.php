@@ -164,7 +164,7 @@
                                                 @isset ($user->meta->facebook)
 
                                                     <a target="_blank" href="https://fb.com/{{ $user->meta->facebook }}">
-                                                        <i class="font-icon font-icon-facebook"></i>
+                                                        @icon(['icon' => 'facebook-square', 'class' => 'font-icon'])
                                                     </a>
 
                                                 @endisset
@@ -172,7 +172,7 @@
                                                 @isset ($user->meta->instagram)
                                                     
                                                     <a target="_blank" href="https://instagram.com/{{ $user->meta->instagram }}">
-                                                        <i class="font-icon font-icon-instagram"></i>
+                                                        @icon(['icon' => 'instagram', 'class' => 'font-icon'])
                                                     </a>
 
                                                 @endisset
@@ -180,7 +180,7 @@
                                                 @isset ($user->meta->linkedin)
 
                                                     <a target="_blank" href="https://linkedin.com/in/{{ $user->meta->linkedin }}">
-                                                        <i class="font-icon font-icon-linkedin"></i>
+                                                        @icon(['icon' => 'linkedin-square', 'class' => 'font-icon'])
                                                     </a>
 
                                                 @endisset
@@ -188,7 +188,7 @@
                                                 @isset ($user->meta->twitter)
 
                                                     <a target="_blank" href="https://twitter.com/{{ $user->meta->twitter }}">
-                                                        <i class="font-icon font-icon-twitter"></i>
+                                                        @icon(['icon' => 'twitter', 'class' => 'font-icon'])
                                                     </a>
 
                                                 @endisset

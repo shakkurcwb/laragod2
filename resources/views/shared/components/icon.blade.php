@@ -21,7 +21,7 @@
 
             @elseif ($type == 'mini-flag')
                 
-                <span class="flag-icon flag-icon-{{ $icon }}"></span>
+                <span class="flag-icon flag-icon-{{ $icon == 'pt-BR' ? 'br' : ( $icon == 'en' ? 'us' : $icon ) }}"></span>
 
             @else
 

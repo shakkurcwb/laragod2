@@ -18,8 +18,6 @@
     
     <div class="container-fluid">
 
-        @success(['message' => session('success')])
-
         <section class="offset-md-3 col-md-6">
 
             @form(['method' => 'delete', 'url' => '/users/' . $user->id])
