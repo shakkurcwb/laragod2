@@ -21,14 +21,16 @@ Route::get('/feedback', 'FeedbackController@create')->name('feedback');
 Route::post('/feedback', 'FeedbackController@store');
 
 # Admin
-Route::get('/dashboard', 'DashboardController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 // Users
 Route::get('/users', 'UserController@index')->name('users');
-Route::post('/users', 'UserController@store');
-Route::delete('/users', 'UserController@destroy');
 Route::get('/users/create', 'UserController@create');
-Route::post('/users/search', 'UserController@search');
 Route::get('/users/{id}', 'UserController@show');
-Route::patch('/users/{id}', 'UserController@update');
 Route::get('/users/{id}/edit', 'UserController@edit');
+Route::get('/users/{id}/delete', 'UserController@delete');
+
+Route::post('/users/search', 'UserController@search');
+Route::post('/users', 'UserController@store');
+Route::patch('/users/{id}', 'UserController@update');
+Route::delete('/users/{id}', 'UserController@destroy');

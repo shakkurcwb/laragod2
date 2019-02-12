@@ -229,6 +229,8 @@ $(document).ready(function() {
         });
     }
 
+    /*
+
     $('.select2').not('.manual').select2();
 
     $(".select2-icon").not('.manual').select2({
@@ -286,6 +288,8 @@ $(document).ready(function() {
         );
         return $state;
     }
+
+    */
 
 /* ==========================================================================
     Tooltips

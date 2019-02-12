@@ -49,7 +49,7 @@
 
                 @endformGroup
 
-                @formGroup(['clean' => true])
+                @formGroup(['no_icon' => true])
 
                     <div class="float-left reset">
                         @checkbox(['name' => 'remember', 'title' => 'Remember Me'])

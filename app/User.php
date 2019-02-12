@@ -13,7 +13,7 @@ class User extends Authenticatable
     protected $table = 'users';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_admin',
     ];
 
     protected $hidden = [
@@ -34,4 +34,16 @@ class User extends Authenticatable
         return $this->hasOne('App\UserMeta');
     }
 
+    public function scopeSearch($query, $text, $fields)
+    {
+        $query->where('id', $text);
+        foreach ($fields as $field)
+        {
+            $query->orWhereHas('meta', function($query) use ($text, $field) {
+                $query->where($field, 'LIKE', '%'.$text.'%');
+            });
+        }
+        return $query;
+    }
+    
 }

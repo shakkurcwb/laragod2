@@ -20,10 +20,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::include('shared.components.img', 'img');
         Blade::include('shared.components.input', 'input');
         Blade::include('shared.components.checkbox', 'checkbox');
-        Blade::include('shared.components.select2', 'select2');
         Blade::include('shared.components.select', 'select');
         Blade::include('shared.components.header', 'header');
         Blade::include('shared.components.success', 'success');
+        Blade::include('shared.components.warn', 'warn');
         Blade::include('shared.components.textarea', 'textarea');
 
         # Components
@@ -36,6 +36,17 @@ class AppServiceProvider extends ServiceProvider
         Blade::include('shared.components.tab.item', 'tabItem');
         Blade::component('shared.components.tab.content', 'tabContent');
         Blade::component('shared.components.tab.panel', 'tabPanel');
+
+        // Card Component
+        Blade::component('shared.components.card.grid', 'cardGrid');
+        Blade::component('shared.components.card.card', 'card');
+
+        // Table Component
+        Blade::component('shared.components.table.table', 'table');
+        Blade::component('shared.components.table.head', 'tableHead');
+        Blade::component('shared.components.table.body', 'tableBody');
+        Blade::component('shared.components.table.row', 'tableRow');
+        Blade::component('shared.components.table.col', 'tableCol');
 
         # Directives
         Blade::directive('date', function ($expression) {

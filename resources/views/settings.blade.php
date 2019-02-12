@@ -29,29 +29,25 @@
                     <div class="col-sm-4">
 
                         @formGroup([
-                            'clean' => 1,
+                            'no_icon' => 1,
                             'error' => $errors->has('theme') ? $errors->first('theme') : ''
                         ])
 
-                            @select2([
+                            @select([
                                 'name' => 'theme',
                                 'selected' => Request::user()->meta->theme ?? '',
                                 'options' => [
 
-                                    __('Main Themes') => [
-                                        '' => 'Original',
-                                        'theme-rebecca-purple' => 'Rebecca Purple',
-                                        'theme-picton-blue' => 'Picton Blue',
-                                        'theme-picton-blue-white-ebony' => 'Picton Blue White Ebony'
-                                    ],
+                                    '' => 'Original',
+                                    'theme-rebecca-purple' => 'Rebecca Purple',
+                                    'theme-picton-blue' => 'Picton Blue',
 
-                                    __('Side Themes') => [
-                                        'theme-side-tin' => 'Tin',
-                                        'theme-side-ebony-clay' => 'Ebony Clay',
-                                        'theme-side-madison-caribbean' => 'Madison Caribbean',
-                                        'theme-side-caesium-dark-caribbean' => 'Caesium Dark Caribbean',
-                                        'theme-side-litmus-blue' => 'Litmus Blue',
-                                    ],
+                                    'theme-picton-blue-white-ebony' => 'Side White Ebony',
+                                    'theme-side-tin' => 'Side Tin',
+                                    'theme-side-ebony-clay' => 'Side Ebony Clay',
+                                    'theme-side-madison-caribbean' => 'Side Madison Caribbean',
+                                    'theme-side-caesium-dark-caribbean' => 'Side Caesium Dark Caribbean',
+                                    'theme-side-litmus-blue' => 'Side Litmus Blue',
 
                                 ],
                             ])
@@ -68,20 +64,19 @@
                     <div class="col-sm-4">
 
                         @formGroup([
-                            'clean' => 1,
+                            'no_icon' => 1,
                             'error' => $errors->has('language') ? $errors->first('language') : ''
                         ])
 
-                            @select2([
+                            @select([
                                 'name' => 'language',
-                                'type' => 'flag',
                                 'selected' => Request::user()->meta->language ?? config('app.locale'),
                                 'options' => [
                                     
-                                    'pt-BR' => ['br', 'Português'],
-                                    'en' => ['us', 'English'],
-                                    'fr' => ['fr', 'Français'],
-                                    'es' => ['es', 'Español'],
+                                    'pt-BR' => 'Português',
+                                    'en' => 'English',
+                                    'fr' => 'Français',
+                                    'es' => 'Español',
 
                                 ],
                             ])

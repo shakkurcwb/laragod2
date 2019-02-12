@@ -44,8 +44,6 @@ class ProfileController extends Controller
             'instagram' => 'nullable|string|min:2',
             'linkedin' => 'nullable|string|min:2',
             'twitter' => 'nullable|string|min:2',
-            'youtube' => 'nullable|string|min:2',
-            'github' => 'nullable|string|min:2',
         ]);
 
         // Update Password
@@ -91,8 +89,6 @@ class ProfileController extends Controller
             'instagram' => $validated['instagram'],
             'linkedin' => $validated['linkedin'],
             'twitter' => $validated['twitter'],
-            'youtube' => $validated['youtube'],
-            'github' => $validated['github'],
         ]);
 
         return redirect('/profile')->with('success', 'Profile updated.');

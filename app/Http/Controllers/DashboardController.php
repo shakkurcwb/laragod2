@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\User as UserModel;
+
 class DashboardController extends Controller
 {
-    public function __construct()
+    protected $userModel;
+
+    public function __construct(UserModel $userModel)
     {
+        $this->userModel = $userModel;
+
         $this->middleware('auth');
         $this->middleware('admin');
         $this->middleware('locale');
@@ -16,6 +22,11 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        return view('dashboard');
+        $usersCount = $this->userModel->count();
+        $latestUsers = $this->userModel->orderBy('created_at', 'DESC')->limit(6)->get();
+        
+        return view('dashboard')
+            ->with('usersCount', $usersCount)
+            ->with('latestUsers', $latestUsers);
     }
 }
